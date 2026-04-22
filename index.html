@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js for Beginners – Complete Lesson Notes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <div class="badge">Beginner</div>
+        <h2>Vue.js Complete<br />Lesson Notes</h2>
+      </div>
+
+      <div class="nav-section">Chapters</div>
+      <a class="nav-link" href="#intro"
+        ><span class="nav-num">01</span> Introduction to Vue.js</a
+      >
+      <a class="nav-link" href="#setup"
+        ><span class="nav-num">02</span> Getting Started/Setup</a
+      >
+      <a class="nav-link" href="#components"
+        ><span class="nav-num">03</span> Components</a
+      >
+      <a class="nav-link" href="#lists-forms"
+        ><span class="nav-num">04</span> Lists (v-for), Forms, Routers</a
+      >
+      <a class="nav-link" href="#styling"
+        ><span class="nav-num">05</span> CSS Styling Vue.js</a
+      >
+      <a class="nav-link" href="#directives"
+        ><span class="nav-num">06</span> Vue.js Directives</a
+      >
+      <a class="nav-link" href="#custom-directives"
+        ><span class="nav-num">07</span> Custom Directives</a
+      >
+    </nav>
+
+    <!-- Main -->
+    <main id="main">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-eyebrow">Complete Lesson Notes</div>
+        <h1>Learn <span>Vue.js</span><br />From Scratch</h1>
+        <p>
+          A thorough, structured course for absolute beginners. Each chapter
+          includes explanations, code examples, exercises, and an assessment.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Chapters</span>
+            <span class="meta-value">7</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Level</span>
+            <span class="meta-value">Beginner</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Exercises</span>
+            <span class="meta-value">14</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Assessments</span>
+            <span class="meta-value">7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+       LESSON 1 — INTRODUCTION TO VUE.JS
+  ══════════════════════════════ -->
+      <section class="lesson" id="intro">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 01</div>
+          <div class="lesson-title-group">
+            <h2>Introduction to Vue.js</h2>
+            <span class="subtitle">What is Vue.js and why use it?</span>
+          </div>
+        </div>
+
+        <h3>What is Vue.js?</h3>
+        <p>
+          <strong>Vue.js</strong> (pronounced "view") is a
+          <strong>progressive JavaScript framework</strong> for building user
+          interfaces. Unlike other monolithic frameworks, Vue is designed from
+          the ground up to be incrementally adoptable.
+        </p>
+        <p>
+          Vue focuses on the <strong>view layer</strong> only, making it easy to
+          integrate with other libraries or existing projects. It's also
+          perfectly capable of powering sophisticated Single-Page Applications
+          (SPAs) when combined with modern tooling and supporting libraries.
+        </p>
+
+        <h3>Why Choose Vue.js?</h3>
+        <ul>
+          <li>
+            <strong>Easy to Learn</strong> — Simple syntax and clear
+            documentation make it beginner-friendly
+          </li>
+          <li>
+            <strong>Reactive Data Binding</strong> — Automatically updates the
+            DOM when data changes
+          </li>
+          <li>
+            <strong>Component-Based</strong> — Build reusable, encapsulated
+            components
+          </li>
+          <li>
+            <strong>Lightweight</strong> — Small bundle size (~20KB min+gzip)
+          </li>
+          <li>
+            <strong>Versatile</strong> — Can be used for simple widgets or
+            complex applications
+          </li>
+        </ul>
+
+        <h3>Vue.js vs Other Frameworks</h3>
+        <table class="ref-table">
+          <tr>
+            <th>Framework</th>
+            <th>Learning Curve</th>
+            <th>Size</th>
+            <th>Best For</th>
+          </tr>
+          <tr>
+            <td><strong>Vue.js</strong></td>
+            <td>Easy</td>
+            <td>~20KB</td>
+            <td>SPAs, Progressive Enhancement</td>
+          </tr>
+          <tr>
+            <td><strong>React</strong></td>
+            <td>Moderate</td>
+            <td>~40KB</td>
+            <td>Large-scale applications</td>
+          </tr>
+          <tr>
+            <td><strong>Angular</strong></td>
+            <td>Steep</td>
+            <td>~60KB</td>
+            <td>Enterprise applications</td>
+          </tr>
+        </table>
+
+        <h3>The Vue Ecosystem</h3>
+        <p>Vue.js has a rich ecosystem of official and community tools:</p>
+        <ul>
+          <li><strong>Vue Router</strong> — Official routing library</li>
+          <li><strong>Vuex / Pinia</strong> — State management solutions</li>
+          <li><strong>Vue CLI</strong> — Standard tooling for Vue projects</li>
+          <li><strong>Vite</strong> — Next-generation build tool</li>
+          <li>
+            <strong>Nuxt.js</strong> — Framework for server-side rendering
+          </li>
+        </ul>
+
+        <div class="info-box info-note">
+          <span class="icon">💡</span>
+          <div class="content">
+            <strong>Good to know</strong>
+            <p>
+              Vue.js was created by Evan You in 2014 after working on AngularJS
+              at Google. He wanted to extract the parts he liked about Angular
+              and build something lightweight.
+            </p>
+          </div>
+        </div>
+
+        <h3>Your First Vue Application</h3>
+        <p>Here's the simplest possible Vue app:</p>
+        <pre data-lang="HTML"><code><span class="tag">&lt;div <span class="attr">id</span>=<span class="val">"app"</span>&gt;</span><span class="text-node">{{ message }}</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script <span class="attr">src</span>=<span class="val">"https://unpkg.com/vue@3"</span>&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  const { createApp } = Vue;
+  
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app');
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+        <p>
+          This code creates a Vue application that displays "Hello Vue!" on the
+          page. The <code>{{ message }}</code> syntax is called
+          <strong>interpolation</strong> — it displays the value of the
+          <code>message</code> property.
+        </p>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 1.1</div>
+          <h5>Create Your First Vue App</h5>
+          <ol>
+            <li>Create a new HTML file called <strong>hello-vue.html</strong></li>
+            <li>Copy the "Your First Vue Application" example above</li>
+            <li>Open it in your browser and verify you see "Hello Vue!"</li>
+            <li>
+              Change the <code>message</code> value to your own greeting and
+              refresh
+            </li>
+            <li>
+              Open the browser console and type
+              <code>app.message = 'New message'</code> to see reactivity in
+              action
+            </li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 1.2</div>
+          <h5>Explore Vue DevTools</h5>
+          <ol>
+            <li>
+              Install the Vue DevTools browser extension (available for Chrome
+              and Firefox)
+            </li>
+            <li>Open your hello-vue.html file in the browser</li>
+            <li>Open DevTools and find the Vue tab</li>
+            <li>Explore the component tree and data properties</li>
+            <li>Try modifying data values directly in DevTools</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 1</div>
+          <h5>Chapter 1 Knowledge Check</h5>
+          <ol>
+            <li>What does Vue.js stand for and what is it used for?</li>
+            <li>Name three advantages of using Vue.js</li>
+            <li>What is the Vue.js interpolation syntax?</li>
+            <li>Who created Vue.js and in what year?</li>
+            <li>What is the purpose of Vue DevTools?</li>
+            <li>
+              <strong>Practical:</strong> Create a Vue app that displays your
+              name, age, and favorite programming language using three separate
+              data properties.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       LESSON 2 — GETTING STARTED/SETUP
+  ══════════════════════════════ -->
+      <section class="lesson" id="setup">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 02</div>
+          <div class="lesson-title-group">
+            <h2>Getting Started/Setup</h2>
+            <span class="subtitle">Setting up your Vue development environment</span>
+          </div>
+        </div>
+
+        <h3>Installation Methods</h3>
+        <p>There are several ways to use Vue.js in your projects:</p>
+
+        <h4>1. CDN (Content Delivery Network)</h4>
+        <p>
+          The quickest way to get started — perfect for learning and
+          prototyping:
+        </p>
+        <pre data-lang="HTML"><code><span class="comment">&lt;!-- Vue 3 --&gt;</span>
+<span class="tag">&lt;script <span class="attr">src</span>=<span class="val">"https://unpkg.com/vue@3"</span>&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Or specific version --&gt;</span>
+<span class="tag">&lt;script <span class="attr">src</span>=<span class="val">"https://unpkg.com/vue@3.3.4/dist/vue.global.js"</span>&gt;&lt;/script&gt;</span></code></pre>
+
+        <h4>2. NPM (Node Package Manager)</h4>
+        <p>For building large-scale applications with build tools:</p>
+        <pre data-lang="BASH"><code># Install Vue
+npm install vue@latest
+
+# Or with Yarn
+yarn add vue</code></pre>
+
+        <h4>3. Create Vue Project (Recommended)</h4>
+        <p>
+          The official scaffolding tool for Vue projects with Vite (fast build
+          tool):
+        </p>
+        <pre data-lang="BASH"><code># Create a new project
+npm create vue@latest
+
+# Follow the prompts:
+# ✔ Project name: my-vue-app
+# ✔ Add TypeScript? No
+# ✔ Add JSX Support? No
+# ✔ Add Vue Router? Yes
+# ✔ Add Pinia? No
+# ✔ Add Vitest? No
+# ✔ Add ESLint? Yes
+
+# Navigate and install
+cd my-vue-app
+npm install
+npm run dev</code></pre>
+
+        <h3>Project Structure</h3>
+        <p>A typical Vue project created with Vite has this structure:</p>
+        <pre data-lang="TEXT"><code>my-vue-app/
+├── node_modules/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── HelloWorld.vue
+│   ├── App.vue
+│   └── main.js
+├── index.html
+├── package.json
+└── vite.config.js</code></pre>
+
+        <h3>Understanding the Files</h3>
+        <table class="ref-table">
+          <tr>
+            <th>File</th>
+            <th>Purpose</th>
+          </tr>
+          <tr>
+            <td><code>index.html</code></td>
+            <td>Entry HTML file</td>
+          </tr>
+          <tr>
+            <td><code>src/main.js</code></td>
+            <td>Application entry point</td>
+          </tr>
+          <tr>
+            <td><code>src/App.vue</code></td>
+            <td>Root component</td>
+          </tr>
+          <tr>
+            <td><code>src/components/</code></td>
+            <td>Reusable Vue components</td>
+          </tr>
+          <tr>
+            <td><code>package.json</code></td>
+            <td>Project dependencies and scripts</td>
+          </tr>
+          <tr>
+            <td><code>vite.config.js</code></td>
+            <td>Vite build configuration</td>
+          </tr>
+        </table>
+
+        <h3>The main.js File</h3>
+        <p>This is where your Vue application is created and mounted:</p>
+        <pre data-lang="JAVASCRIPT"><code>import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')</code></pre>
+
+        <h3>Single File Components (.vue)</h3>
+        <p>
+          Vue components are typically written in <code>.vue</code> files with
+          three sections:
+        </p>
+        <pre data-lang="VUE"><code><span class="tag">&lt;template&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"hello"</span>&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text-node">{{ msg }}</span><span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+export default {
+  name: 'HelloWorld',
+  data() {
+    return {
+      msg: 'Welcome to Vue!'
+    }
+  }
+}
+<span class="tag">&lt;/script&gt;</span>
+
+<span class="tag">&lt;style <span class="attr">scoped</span>&gt;</span>
+.hello {
+  color: #42b983;
+}
+<span class="tag">&lt;/style&gt;</span></code></pre>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Best Practice</strong>
+            <p>
+              Use the <code>scoped</code> attribute on
+              <code>&lt;style&gt;</code> tags to ensure CSS only applies to the
+              current component, preventing style conflicts.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Common Mistake</strong>
+            <p>
+              Make sure Node.js is installed on your system before using npm or
+              create-vue. Download it from
+              <a href="https://nodejs.org" target="_blank">nodejs.org</a>.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 2.1</div>
+          <h5>Set Up a Vue Project</h5>
+          <ol>
+            <li>Ensure Node.js is installed (run <code>node --version</code>)</li>
+            <li>
+              Create a new Vue project using
+              <code>npm create vue@latest</code>
+            </li>
+            <li>Name it <strong>my-first-vue-app</strong></li>
+            <li>Select "No" for all additional features for now</li>
+            <li>Navigate to the project and run <code>npm install</code></li>
+            <li>Start the dev server with <code>npm run dev</code></li>
+            <li>Open the provided localhost URL in your browser</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 2.2</div>
+          <h5>Explore the Project Structure</h5>
+          <ol>
+            <li>Open your project in VS Code</li>
+            <li>Locate and open <code>src/App.vue</code></li>
+            <li>
+              Change the text in the <code>&lt;template&gt;</code> section
+            </li>
+            <li>Save the file and watch the browser auto-reload</li>
+            <li>
+              Modify the CSS in the <code>&lt;style&gt;</code> section
+            </li>
+            <li>Create a new file in <code>src/components/</code> called <code>MyComponent.vue</code></li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 2</div>
+          <h5>Chapter 2 Knowledge Check</h5>
+          <ol>
+            <li>What are the three main ways to install Vue.js?</li>
+            <li>What is the purpose of the <code>main.js</code> file?</li>
+            <li>What are the three sections of a .vue Single File Component?</li>
+            <li>What does the <code>scoped</code> attribute do in a style tag?</li>
+            <li>What command starts the development server in a Vue project?</li>
+            <li>
+              <strong>Practical:</strong> Create a new Vue project, modify
+              App.vue to display a custom welcome message, and change the
+              background color using scoped styles.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       LESSON 3 — COMPONENTS
+  ══════════════════════════════ -->
+      <section class="lesson" id="components">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 03</div>
+          <div class="lesson-title-group">
+            <h2>Components</h2>
+            <span class="subtitle">Building reusable UI pieces</span>
+          </div>
+        </div>
+
+        <h3>What are Components?</h3>
+        <p>
+          Components are <strong>reusable Vue instances</strong> with a name.
+          They accept inputs (props), manage their own state (data), and can
+          emit events to communicate with parent components.
+        </p>
+        <p>
+          Think of components as custom HTML elements that encapsulate markup,
+          logic, and styling.
+        </p>
+
+        <h3>Creating a Component</h3>
+        <p>Here's a simple component example:</p>
+        <pre data-lang="VUE"><code><span class="comment">&lt;!-- ButtonCounter.vue --&gt;</span>
+<span class="tag">&lt;template&gt;</span>
+  <span class="tag">&lt;button <span class="attr">@click</span>=<span class="val">"count++"</span>&gt;</span>
+    <span class="text-node">Count is: {{ count }}</span>
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+export default {
+  name: 'ButtonCounter',
+  data() {
+    return {
+      count: 0
+    }
+  }
+}
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+        <h3>Using Components</h3>
+        <p>To use a component, import it and register it:</p>
+        <pre data-lang="VUE"><code><span class="comment">&lt;!-- App.vue --&gt;</span>
+<span class="tag">&lt;template&gt;</span>
+  <span class="tag">&lt;div&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text-node">My App</span><span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;ButtonCounter /&gt;</span>
+    <span class="tag">&lt;ButtonCounter /&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+import ButtonCounter from './components/ButtonCounter.vue'
+
+export default {
+  components: {
+    ButtonCounter
+  }
+}
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+        <h3>Props (Parent to Child Communication)</h3>
+        <p>
+          Props allow you to pass data from a parent component to a child
+          component:
+        </p>
+        <pre data-lang="VUE"><code><span class="comment">&lt;!-- UserCard.vue --&gt;</span>
+<span class="tag">&lt;template&gt;</span>
+  <span class="tag">&lt;div <span class="attr">class</span>=<span class="val">"card"</span>&gt;</span>
+    <span class="tag">&lt;h2&gt;</span><span class="text-node">{{ name }}</span><span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text-node">{{ email }}</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+export default {
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    email: {
+      type: String,
+      default: 'No email provided'
+    }
+  }
+}
+<span class="tag">&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Usage in parent --&gt;</span>
+<span class="tag">&lt;UserCard <span class="attr">name</span>=<span class="val">"John Doe"</span> <span class="attr">email</span>=<span class="val">"john@example.com"</span> /&gt;</span></code></pre>
+
+        <h3>Custom Events (Child to Parent Communication)</h3>
+        <p>Components can emit custom events to communicate with parents:</p>
+        <pre data-lang="VUE"><code><span class="comment">&lt;!-- Child component --&gt;</span>
+<span class="tag">&lt;template&gt;</span>
+  <span class="tag">&lt;button <span class="attr">@click</span>=<span class="val">"handleClick"</span>&gt;</span><span class="text-node">Click me</span><span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+export default {
+  methods: {
+    handleClick() {
+      this.$emit('custom-event', 'Hello from child!')
+    }
+  }
+}
+<span class="tag">&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Parent component --&gt;</span>
+<span class="tag">&lt;ChildComponent <span class="attr">@custom-event</span>=<span class="val">"handleCustomEvent"</span> /&gt;</span></code></pre>
+
+        <h3>Component Lifecycle</h3>
+        <p>Vue components have lifecycle hooks you can tap into:</p>
+        <table class="ref-table">
+          <tr>
+            <th>Hook</th>
+            <th>When It Runs</th>
+          </tr>
+          <tr>
+            <td><code>beforeCreate</code></td>
+            <td>Before instance is initialized</td>
+          </tr>
+          <tr>
+            <td><code>created</code></td>
+            <td>After instance is created</td>
+          </tr>
+          <tr>
+            <td><code>beforeMount</code></td>
+            <td>Before component is mounted to DOM</td>
+          </tr>
+          <tr>
+            <td><code>mounted</code></td>
+            <td>After component is mounted to DOM</td>
+          </tr>
+          <tr>
+            <td><code>beforeUpdate</code></td>
+            <td>Before reactive data changes update DOM</td>
+          </tr>
+          <tr>
+            <td><code>updated</code></td>
+            <td>After DOM is updated</td>
+          </tr>
+          <tr>
+            <td><code>beforeUnmount</code></td>
+            <td>Before component is destroyed</td>
+          </tr>
+          <tr>
+            <td><code>unmounted</code></td>
+            <td>After component is destroyed</td>
+          </tr>
+        </table>
+
+        <pre data-lang="JAVASCRIPT"><code>export default {
+  mounted() {
+    console.log('Component is now mounted!')
+  },
+  unmounted() {
+    console.log('Component is being destroyed')
+  }
+}</code></pre>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Best Practice</strong>
+            <p>
+              Use <code>mounted()</code> for API calls and DOM manipulation.
+              Use <code>created()</code> for data initialization that doesn't
+              require the DOM.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.1</div>
+          <h5>Create a Greeting Component</h5>
+          <ol>
+            <li>
+              Create a new component called <code>GreetingCard.vue</code>
+            </li>
+            <li>
+              Add props for <code>name</code> and <code>message</code>
+            </li>
+            <li>Display both props in the template</li>
+            <li>Import and use the component in App.vue</li>
+            <li>Pass different values to multiple instances</li>
+            <li>Add scoped styles to make it look like a card</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.2</div>
+          <h5>Implement Custom Events</h5>
+          <ol>
+            <li>
+              Create a <code>LikeButton.vue</code> component
+            </li>
+            <li>Add a button that emits a "liked" event when clicked</li>
+            <li>In the parent, listen for the event and display a message</li>
+            <li>Pass data with the event (e.g., timestamp)</li>
+            <li>Add a <code>mounted()</code> hook that logs to console</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 3</div>
+          <h5>Chapter 3 Knowledge Check</h5>
+          <ol>
+            <li>What is a Vue component?</li>
+            <li>How do you pass data from parent to child component?</li>
+            <li>How do you send data from child to parent component?</li>
+            <li>What is the purpose of the <code>mounted()</code> lifecycle hook?</li>
+            <li>What does the <code>required: true</code> prop option do?</li>
+            <li>
+              <strong>Practical:</strong> Create a ProductCard component that
+              accepts name, price, and image props. Use it in App.vue to display
+              three different products. Add a "Buy" button that emits a
+              "purchase" event with the product name.
+            </li>
+          </ol>
+        </div>
+      </section>
+
